@@ -1,0 +1,52 @@
+" vim: filetype=vim
+syntax on
+set number
+set nocompatible
+set t_Co=256
+set expandtab   "tab to spaces
+set tabstop=4
+set noshowmode 
+set shiftwidth=4
+set softtabstop=4
+set smartindent
+set autoindent
+set cindent
+set cursorline
+set ignorecase
+set smartcase
+set hlsearch
+set wildmenu
+set showcmd
+set hidden
+set incsearch
+set wrap
+set colorcolumn=80
+set timeout timeoutlen=1000 ttimeoutlen=100
+set mouse=""
+set laststatus=2
+set scrolloff=5
+"latex conceal:
+set conceallevel=2
+set concealcursor=""
+
+set modeline
+set modelines=5
+set secure
+
+let g:python_host_skip_check = 1
+let g:python_host_prog = '/usr/bin/python'    
+
+"Testj
+"
+let b:testj_flags = ''
+
+"NVIM
+
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+
+"VIM
+"set guioptions -=T
+"set guioptions -=m 
+
+colorscheme distinguished
+

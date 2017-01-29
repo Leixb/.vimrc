@@ -1,0 +1,11 @@
+" vim: filetype=vim
+au Filetype java map <C-F9> :make<ENTER><ENTER>:!java "%:r"<ENTER>
+au Filetype tex map <C-F9> :!pkill mupdf <ENTER><ENTER> :!mupdf "%:r.pdf" & <ENTER><ENTER>
+
+map <silent> <F7> :Ss<ENTER>
+map <silent> <C-F7> :Wj<ENTER>
+map <C-F8> :make<ENTER><ENTER>:call AfterMakeCwithIn()<ENTER>
+map <F9> :make<ENTER>
+map <C-F9> :make<ENTER><ENTER>:call AfterMakeC()<ENTER>
+map <F10> :Tj<ENTER>
+map <C-F10> :call FetJutge()<ENTER>

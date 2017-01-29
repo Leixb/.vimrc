@@ -1,0 +1,60 @@
+" vim: filetype=vim
+"Custom keymaps
+
+let mapleader=" "
+inoremap jk <Esc>
+
+nnoremap <Leader>c :set cursorline! <CR>
+map Y y$
+nnoremap <C-S-L> :nohl<CR><C-L>"
+
+map <F1> :NERDTreeToggle<ENTER>
+map <F2> :bp!<ENTER>
+map <F3> :bn!<ENTER>
+map <F4> :TagbarToggle<ENTER>
+
+"Bufferexplorer
+map <F5> <leader>be
+"ROT13
+map <F6> mtggg?G`t
+
+map <silent> <F8> :YcmForceCompileAndDiagnostics<ENTER><ENTER>
+
+"Fix Identation
+map <F12> mtgg=G`t 
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<F5>"
+let g:UltiSnipsJumpForwardTrigger="<F5>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+
+" Leader keymaps
+noremap <Leader>ev :vsplit $MYVIMRC<ENTER>
+noremap <Leader>sv :source $MYVIMRC<ENTER>
+
+noremap <Leader>jd :YcmCompleter GoTo<ENTER>
+noremap <Leader>bd :bdelete!<ENTER>
+noremap <leader>gt :YcmCompleter GetType<ENTER>
+noremap <leader>fx :YcmCompleter FixIt<ENTER>
+
+noremap <leader>db :term gdb "_%:r.o"<CR>
+noremap <leader>vc :e _local_settings_vim_danger<CR>
+noremap <leader>mk :make<CR>
+noremap <leader>bn :bn!<CR>
+noremap <leader>bp :bp!<CR>
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
+
+" Disable Arrows and Esc to train
+inoremap <Up> <nop>
+inoremap <Down> <nop>
+inoremap <Right> <nop>
+inoremap <Left> <nop>
+inoremap <ESC> <nop>
+
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+

@@ -1,0 +1,22 @@
+" vim: filetype=vim
+" Jutge.org keymaps
+map <silent> <F7> :Ss<ENTER>
+map <silent> <F31> :Wj<ENTER>
+map <F33> :term ./"_%:r.o"<ENTER>
+map <F10> :Tj<ENTER>
+map <F34> :call FetJutge()<ENTER>
+
+" Compile commands
+map <F32> :Neomake!<ENTER>:call AfterMakeCwithIn()<ENTER>
+map <F9> :Neomake!<ENTER>
+
+" Filetype Specify keymaps
+
+au Filetype python map <F33> :term "./%"<ENTER>
+au Filetype python3 map <F33> :term "./%"<ENTER>
+au Filetype sh map <F33> :term "./%"<ENTER>
+au Filetype java map <F33> :term java "%:r"<ENTER>
+au Filetype tex map <F33> :!pkill mupdf <ENTER><ENTER> :!mupdf "%:r.pdf" & <ENTER><ENTER>
+au Filetype markdown map <F33> :!pkill mupdf <ENTER><ENTER> :!mupdf "%:r.pdf" & <ENTER><ENTER>
+au Filetype haskell map <F33> :term runghc "%"<ENTER>
+

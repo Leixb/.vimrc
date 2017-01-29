@@ -1,0 +1,26 @@
+" vim: filetype=vim
+if !filereadable("makefile")
+    au Filetype cpp set makeprg=g++\ -std=c++11\ -g\ \"%:r.cpp\"\ -o\ \"_%:r.o\"
+    au Filetype c set makeprg=gcc\ -g\ \"%:r.c\"\ -o\ \"_%:r.o\"
+    au Filetype python set makeprg=chmod\ +x\ \"%\"
+    au Filetype python3 set makeprg=chmod\ +x\ \"%\"
+    au Filetype sh set makeprg=chmod\ +x\ \"%\"
+    au Filetype java set makeprg=javac\ \"%:r.java\"
+    au Filetype tex set makeprg=pdflatex\ \"%:r.tex\"
+
+    au Filetype tex set concealcursor=""
+
+    au Filetype markdown set makeprg=pandoc\ -o\ \"%:r.pdf\"\ \"%\"
+
+endif
+
+    au Filetype cpp Docset cpp
+
+
+"Identline no conceal on cursor for latex and markdown
+au FileType tex let g:indentLine_concealcursor = ""
+au FileType markdown let g:indentLine_concealcursor = ""
+
+"For filetype specific keymaps see mappings
+
+let g:tex_flavor = "latex"
