@@ -3,6 +3,7 @@
 
 let mapleader=" "
 inoremap jk <Esc>
+cnoremap jk <C-c>
 
 nnoremap <Leader>c :set cursorline! <CR>
 map Y y$
