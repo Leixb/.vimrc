@@ -7,7 +7,8 @@ cnoremap jk <C-c>
 
 nnoremap <Leader>c :set cursorline! <CR>
 map Y y$
-nnoremap <C-S-L> :nohl<CR><C-L>"
+"nnoremap <C-S-L> :nohl<CR><C-L>"
+nnoremap <M-L> :nohl<CR><C-L>"
 
 map <F1> :NERDTreeToggle<ENTER>
 map <F2> :bp!<ENTER>
@@ -43,6 +44,17 @@ noremap <leader>vc :e _local_settings_vim_danger<CR>
 noremap <leader>mk :make<CR>
 noremap <leader>bn :bn!<CR>
 noremap <leader>bp :bp!<CR>
+
+"YCM
+nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" Denite Ctrl-p
+nnoremap <c-p>  :Denite file_rec<CR>
+
+" Denite Bufer explorer
+nnoremap <leader>be :Denite buffer<CR>
+
+nnoremap <leader>fg :Denite -auto-preview grep<CR>
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
