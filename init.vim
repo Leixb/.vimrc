@@ -1,10 +1,12 @@
 " vim: filetype=vim
 let &runtimepath.=',/usr/share/vim/vimfiles'
-source ~/.vim/config/settings
+source ~/.vim/config/settings   
 
 filetype off
 
 source ~/.vim/config/plugins
+" Source Denite menus; must be called after plugins
+source ~/.vim/config/denite
 
 filetype on
 filetype plugin on
@@ -13,6 +15,7 @@ filetype indent on
 source ~/.vim/config/functions
 source ~/.vim/config/mappings
 source ~/.vim/config/abbreviations
+" Filetype dependent configs
 source ~/.vim/config/filetypes
 source ~/.vim/config/autocmd
 
@@ -27,6 +30,3 @@ endif
 if (filereadable("_local_settings_vim_danger"))
     source _local_settings_vim_danger
 endif
-
-set concealcursor=""
-
