@@ -111,3 +111,69 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 "}}}
 
+
+if (!has('nvim'))
+
+" VIM mappings {{{
+
+" Filetype maps {{{
+augroup filetype_maps_vim
+    autocmd!
+    autocmd Filetype java map <C-F9> :make<CR><CR>:!java "%:r"<CR>
+    autocmd Filetype tex map <C-F9> :!pkill mupdf <CR><CR> :!mupdf "%:r.pdf" & <CR><CR>
+augroup END
+" }}}
+
+" Jutge mappings {{{
+nnoremap <silent> <F7> :Ss<CR>
+nnoremap <silent> <C-F7> :Wj<CR>
+nnoremap <F10> :Tj<CR>
+nnoremap <C-F10> :call FetJutge()<CR>
+" }}}
+
+" Compilation mappings {{{
+nnoremap <C-F8> :call AfterMakeCwithIn()<CR>
+nnoremap <C-F9> :call AfterMakeC()<CR>
+" }}}
+
+" }}}
+
+else
+
+" NVIM mappings {{{
+
+" Jutge.org keymaps {{{
+nnoremap <silent> <F7> :Ss<CR>
+nnoremap <silent> <F31> :Wj<CR>
+nnoremap <F33> :term ./"_%:r.o"<CR>
+nnoremap <F10> :Tj<CR>
+nnoremap <F34> :call FetJutge()<CR>
+"}}}
+
+" Compile commands {{{
+nnoremap <F32> :call AfterMakeCwithIn()<CR>
+nnoremap <F33> :call AfterMakeC()<CR>
+" }}}
+
+
+" Filetype Specify keymaps {{{
+
+augroup filetype_maps_nvim
+    autocmd!
+    autocmd Filetype python map <F33> :term "./%"<CR>
+    autocmd Filetype python3 map <F33> :term "./%"<CR>
+    autocmd Filetype sh map <F33> :term "./%"<CR>
+    autocmd Filetype java map <F33> :term java "%:r"<CR>
+    autocmd Filetype tex map <F33> :!pkill mupdf <CR><CR> :!mupdf "%:r.pdf" & <CR><CR>
+    autocmd Filetype markdown map <F33> :!pkill mupdf <CR><CR> :!mupdf "%:r.pdf" & <CR><CR>
+    autocmd Filetype haskell map <F33> :term runghc "%"<CR>
+augroup END
+" }}}
+
+" Terminal mappings {{{
+tnoremap <Esc> <C-\><C-n>
+"}}}
+
+" }}}
+
+endif

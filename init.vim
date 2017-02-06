@@ -19,14 +19,8 @@ source ~/.vim/config/abbreviations.vim
 source ~/.vim/config/filetypes.vim
 source ~/.vim/config/autocmd.vim
 
-if (has('nvim'))
-    source ~/.vim/config/mappings_nvim.vim
-    source ~/.vim/config/functions_nvim.vim
-else 
-    source ~/.vim/config/mappings_vim.vim
-    source ~/.vim/config/functions_vim.vim
-endif
-
 if (filereadable("_local_settings_vim_danger"))
     source _local_settings_vim_danger
 endif
+
+source ~/.vim/bundle/jutge/plugin/jutge.vim
