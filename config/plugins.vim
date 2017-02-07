@@ -8,7 +8,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 " Plugin manager
-call plug#begin('~/.vim/bundle')
+call plug#begin('~/.vim/plugged')
 
 Plug 'Raimondi/delimitMate' "{{{
 " Automatic closing of quotes, parenthesis, brackets, etc., 
