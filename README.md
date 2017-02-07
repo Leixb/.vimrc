@@ -17,8 +17,8 @@ Clone this repository to `$XDG_CONFIG_HOME/nvim`
 ### Both Neovim and Vim
 Clone the repository to `~/.vim` and link nvim to this folder:
 
-    git clone https://github.com/Leixb/.vimrc ~/.vim
+    git clone https://github.com/Leixb/.vimrc ~/.vim
     ln -s "~/.vim/init.vim" ~/.vimrc
     ln -s "~/.vim/init.vim" ~/.vimrc
     ln -s ~/.vim "$XDG_CONFIG_HOME/nvim/"
-    
+
