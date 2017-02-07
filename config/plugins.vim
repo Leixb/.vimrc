@@ -1,5 +1,12 @@
 " vim: filetype=vim
 
+" Auto install vim-plug if not installed
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+
 " Plugin manager
 call plug#begin('~/.vim/bundle')
 
@@ -96,6 +103,7 @@ Plug 'tpope/vim-fugitive' "{{{
 Plug 'vim-airline/vim-airline' "{{{
 " Lean & mean status/tabline for vim that's light as air.
 let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#ycm#enabled = 1
 let g:airline_powerline_fonts = 1
 "}}}
 

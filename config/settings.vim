@@ -4,6 +4,10 @@
 " as consequence
 set nocompatible
 
+filetype on
+filetype plugin on
+filetype indent on
+
 syntax on
 
 set number
@@ -79,21 +83,23 @@ let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python'    
 " }}}
 
-"Testj
-let b:testj_flags = ''
+" Make default tex filetype if empty latex and not plaintex
+let g:tex_flavor = "latex"
+
+if (has('nvim'))
 
 "NVIM {{{
-if (has('nvim'))
     let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-endif
 "}}}
 
+else 
+
 "VIM {{{
-if (!has('nvim'))
     set guioptions -=T
     set guioptions -=m 
-endif
 " }}}
+
+endif
 
 " Style {{{
 colorscheme distinguished
