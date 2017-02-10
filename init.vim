@@ -3,16 +3,22 @@
 " Add global configs to runtimepath
 let &runtimepath.=',/usr/share/vim/vimfiles'
 
-source ~/.vim/config/settings.vim
+let $VIMCONF ='~/.vim/config'
 
-source ~/.vim/config/plugins.vim
+source $VIMCONF/settings.vim
+
+source $VIMCONF/plugins.vim
 " Source Denite menus; must be called after plugins
-source ~/.vim/config/denite.vim
+source $VIMCONF/denite.vim
 
-source ~/.vim/config/functions.vim
-source ~/.vim/config/mappings.vim
-source ~/.vim/config/abbreviations.vim
-source ~/.vim/config/autocmd.vim
+source $VIMCONF/functions.vim
+source $VIMCONF/mappings.vim
+
+if filereadable(expand($VIMCONF . '/abbreviations.vim'))
+    source $VIMCONF/abbreviations.vim
+endif
+
+source $VIMCONF/autocmd.vim
 
 " Load local.vimrc if exists
 if (filereadable("local.vimrc"))
