@@ -1,109 +1,124 @@
-" vim: filetype=vim
+" Global vim settings
 
-" Use Vim settings rather than Vi. This must be first as it changes settings
-" as consequence
 set nocompatible
 
-filetype on
-filetype plugin on
-filetype indent on
-
+filetype plugin indent on
 syntax on
 
+" Show {{{1
 set number
 set showmode 
 set showcmd
 
-set t_Co=256
+set visualbell
+set cursorline
+set laststatus=2
 
+set conceallevel=2
+set concealcursor=""
+
+
+" Indent and tabs {{{1
 set expandtab   "tab to spaces
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+set shiftround
 set smarttab
 
 set autoindent
 set smartindent
 set cindent
 
-" Display tabs and trailing spaces
 set list
-set listchars="tab:|||>,trail:·"    
+let &listchars="tab:|||>,trail:·"    
 
-set cursorline
-set colorcolumn=80
-
+" Search {{{1
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+set wrapscan
 
+" Wildmenu {{{1
 set wildmenu
 set wildignore=*.o
 set wildignore+=*.png,*.jpg,*.gif
 set wildignore+=*.pdf,*.odt
 
+" Buffer options {{{1
 set hidden
-
 set autoread
-set visualbell
-set history=1000
 
+
+
+" Wraping {{{1
+set colorcolumn=80
 set nowrap
 set linebreak
+set synmaxcol=200
 
-" Timeout commands (safe allows to do jk when mappend to <ESC> in insertmode
-" if you wait enough)
+" Timeout {{{1
 set timeout 
 set timeoutlen=1000 
 set ttimeoutlen=100
 
+" Mouse {{{1
 set mouse=""
-set laststatus=2
 
+" Scroll {{{1
 set scrolloff=5
 set sidescrolloff=15
 set sidescroll=1
 
-" Allow backspace to wrap through lines and EOF as well as idents
+" Backspace {{{1
 set backspace=indent,eol,start 
 
-" Conceal everything possible except when on cursor line
-set conceallevel=2
-set concealcursor=""
-
-" Enable vim modelines with secure option
+" Modelines {{{1
 set modeline
 set modelines=5
 set secure
 
-" python {{{
+" History {{{1
+set history=1000
+
+" Temp files {{{1
+set backup
+set backupdir   =$HOME/.vim/files/backup/
+set backupext   =-vimbackup
+set backupskip  =
+set directory   =$HOME/.vim/files/swap//
+set updatecount =100
+set undofile
+set undodir     =$HOME/.vim/files/undo/
+set viminfo ='100,n$HOME/.vim/files/info/viminfo
+
+" python {{{1
 let g:python_host_skip_check = 1
 let g:python_host_prog = '/usr/bin/python2'    
 let g:python3_host_prog = '/usr/bin/python'    
-" }}}
 
 " Make default tex filetype if empty latex and not plaintex
 let g:tex_flavor = "latex"
 
+" NVIM and VIM specifics {{{1
 if (has('nvim'))
 
-"NVIM {{{
+" NVIM {{{2
     let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-"}}}
 
 else 
 
-"VIM {{{
+" VIM {{{2
     set guioptions -=T
     set guioptions -=m 
-" }}}
 
 endif
 
-" Style {{{
+" Style {{{1
+set t_Co=256
+
 colorscheme distinguished
 
 hi clear SpellBad
 hi SpellBad cterm=underline ctermfg=red
-" }}}

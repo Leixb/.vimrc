@@ -1,10 +1,8 @@
-" vim: filetype=vim
-
 " Custom Denite menus
 
 let s:menus = {}
 
-" Denite menu {{{
+" Denite menu {{{1
 let s:menus.denite = { 'description': 'Defined denite menus' }
 
 let s:menus.denite.command_candidates = [
@@ -12,9 +10,8 @@ let s:menus.denite.command_candidates = [
     \ ['Ycm commands                 ', 'Denite menu:ycm'],
     \ ['Jutge commands               ', 'Denite menu:jutge'],
     \ ]
-"}}}
 
-" YCM menu {{{
+" YCM menu {{{1
 let s:menus.ycm = { 'description' : 'Ycm commands' }
 
 let s:menus.ycm.command_candidates = [
@@ -37,15 +34,13 @@ let s:menus.ycm.command_candidates = [
     \ ['Toggle logs                                                    ,tl', 'YcmToggleLogs'],
     \ ['YcmCompleter                                                   ,yc', 'exe "YcmCompleter " input("Ycm command: ")'],
     \ ]
-"}}}
 
-" Jutge menu {{{
+" Jutge menu {{{1
 let s:menus.jutge = { 'description' : 'Jutge.org commands' }
 
 let s:menus.jutge = []
-"}}}
 
-" Git menu (fugitive') {{{
+" Git menu (fugitive') {{{1
 let s:menus.git = { 'description' : 'Git fugitive commands' }
 
 let s:menus.git.command_candidates = [
@@ -63,6 +58,5 @@ let s:menus.git.command_candidates = [
     \ [' git prompt       (Fugitive, buffer output)                  ,gi', 'exe "Git! " input("git command: ")'],
     \ [' git cd           (Fugitive)                                 ,gC', 'Gcd'],
     \ ]
-"}}}
 
 call denite#custom#var('menu', 'menus', s:menus)

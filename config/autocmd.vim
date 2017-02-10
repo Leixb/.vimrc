@@ -1,6 +1,6 @@
-" vim: filetype=vim
+" Custom autocmd 
 
-" Change VIM cursor in insert mode {{{
+" Change VIM cursor in insert mode {{{1
 " For shape change in NVIM see: $NVIM_TUI_ENABLE_CURSOR_SHAPE) 
 if !has('nvim')
     if has("autocmd")
@@ -17,10 +17,9 @@ if !has('nvim')
         augroup END
     endif
 endif
-"}}}
 
-" Filetypes {{{
-" set custom makeprg if no makefile found {{{
+" Filetypes {{{1
+" set custom makeprg if no makefile found {{{2
 if !filereadable("makefile")
     augroup filetype_make
         autocmd!
@@ -34,30 +33,25 @@ if !filereadable("makefile")
         autocmd Filetype markdown   set makeprg=pandoc\ -o\ \"%:r.pdf\"\ \"%\"
     augroup END
 endif
-" }}} 
 
-" filetype autocmd allways run {{{
+" filetype autocmd allways run {{{2
 augroup filetype_allways
     autocmd!
     autocmd Filetype cpp Docset cpp
     autocmd Filetype tex set concealcursor=""
 augroup END
-" }}}
 
-" Vimscript file settings {{{
+" Vimscript file settings {{{2
 augroup filetype_vim
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
 augroup END
-" }}}
 
-" Identline no conceal on cursor for latex and markdown {{{
+" Identline no conceal on cursor for latex and markdown {{{2
 augroup identline_fix
     autocmd!
     autocmd FileType tex let g:indentLine_concealcursor = ""
     autocmd FileType markdown let g:indentLine_concealcursor = ""
 augroup END
-" }}}
 
-" }}} END filetypes
 

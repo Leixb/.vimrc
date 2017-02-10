@@ -1,4 +1,4 @@
-" vim: filetype=vim
+" Main vimconfig file
 
 " Add global configs to runtimepath
 let &runtimepath.=',/usr/share/vim/vimfiles'
