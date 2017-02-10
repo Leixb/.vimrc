@@ -57,7 +57,7 @@ let g:UltiSnipsUsePythonVersion = 3
 Plug 'majutsushi/tagbar' "{{{2
 " Vim plugin that displays tags in a window, ordered by scope
 
-Plug 'mattn/emmet-vim' "{{{2
+Plug 'mattn/emmet-vim', {'for' : 'html'} "{{{2
 " Provides support for expanding abbreviations similar to emmet
 let g:user_emmet_install_global = 0
 autocmd FileType html,css,php EmmetInstall
@@ -103,14 +103,23 @@ let g:vim_markdown_toc_autofit = 1
 let g:vim_markdown_math = 1
 let g:vim_markdown_frontmatter = 1
 
-Plug 'KabbAmine/zeavim.vim'    "{{{2
+Plug 'vim-pandoc/vim-pandoc' "{{{2
+" Integrate Vim with the pandoc document converter
+
+Plug 'vim-pandoc/vim-pandoc-syntax' "{{{2
+" pandoc markdown syntax, to be installed alongside vim-pandoc
+
+Plug 'KabbAmine/zeavim.vim' "{{{2
 " Zeal for vim
 
-Plug 'sjl/gundo.vim'   "{{{2
+Plug 'sjl/gundo.vim' "{{{2
 " Visualize your undo tree
 
-Plug 'arecarn/vim-crunch'  "{{{2
+Plug 'arecarn/vim-crunch' "{{{2
 " Looser math syntax in = register and command g==
+
+Plug 'arecarn/selection.vim' "{{{2
+" Allows detection of a command being called from insert mode or visual mode
 
 Plug 'ryanoasis/vim-devicons' "{{{2
 " Adds file type glyphs/icons to many popular Vim plugins
@@ -136,11 +145,31 @@ let g:ascii = [
 let g:startify_custom_header =
     \ 'map(g:ascii + startify#fortune#boxed(), "\"   \".v:val")'
 
-Plug 'rhysd/vim-grammarous' "{{{2
+Plug 'rhysd/vim-grammarous', {'on' : 'GrammarousCheck'} "{{{2
 " A powerful grammar checker for Vim using LanguageTool.
 let g:grammarous#use_vim_spelllang=1
 
-Plug 'Shougo/denite.nvim',{'do':':UpdateRemotePlugins'} "{{{2
+Plug 'reedes/vim-pencil' "{{{2
+" Rethinking Vim as a tool for writing
+
+Plug 'junegunn/goyo.vim' "{{{2
+" Distraction-free writing in Vim
+augroup Goyo
+    autocmd!
+    autocmd User GoyoEnter Limelight
+    autocmd User GoyoLeave Limelight!
+augroup END
+
+Plug 'junegunn/limelight.vim' "{{{2
+" All the world's indeed a stage and we are merely players
+
+Plug 'robertmeta/nofrils' "{{{2
+" An extremely minimalist colorscheme, even opting out of the second L in frills 
+
+Plug 'airblade/vim-gitgutter' "{{{2
+" git diff in the gutter (sign column) and stages/undoes hunks.
+
+Plug 'Shougo/denite.nvim', has('nvim') ? { 'do': ':UpdateRemotePlugins' } : {} "{{{2
 " Dark powered asynchronous unite all interfaces for Neovim/Vim8
 " Menus in file .vim/config/denite
 

@@ -116,9 +116,12 @@ else
 endif
 
 " Style {{{1
-set t_Co=256
+set termguicolors
 
-colorscheme distinguished
+let g:default_colorscheme ='distinguished'
+
+set background=dark
+exec 'colorscheme ' g:default_colorscheme
 
 hi clear SpellBad
 hi SpellBad cterm=underline ctermfg=red
