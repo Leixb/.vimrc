@@ -1,0 +1,124 @@
+snippet function_gcd "Greatest common divisor" b
+template <typename T>
+T gcd (T a, T b) { return (b==0)? a : gcd(b,a%b); }
+endsnippet
+
+snippet function_abs "Absoulte value" b
+template <typename T>
+T abs (T n) { return (n < 0)? -n : n; }
+endsnippet
+
+snippet function_ostream_vector "ostream << vector" b
+template <typename T>
+ostream& operator<<(ostream& os, const vector<T>& v) {
+	os << '[';
+	for (size_t i = 0; i < v.size(); ++i) os << " "[i==0] << v[i];
+	os << ']';
+	return os;
+}
+endsnippet
+
+snippet function_istream_vector "istream vector" b
+template <typename T>
+istream& operator>>(istream& is, vector<T>& v) {
+	for (auto& i : v) is >> i;
+	return is;
+}
+endsnippet
+
+snippet function_istram_pair "istream pair" b
+template <typename T1, typename T2>
+istream& operator>> (istream& is, pair<T1,T2>& p) {
+	is >> p.first >> p.second;
+	return is;
+}
+endsnippet
+
+snippet function_ostram_pair "ostream pair"
+template <typename T1, typename T2>
+istream& operator<< (istream& is, const pair<T1,T2>& p) {
+	os << '{' << p.first << ',' << p.second << '}';
+	return os;
+}
+endsnippet
+
+snippet incBits "Include all STL libraries" b
+#include <bits/stdc++.h>
+endsnippet
+
+snippet fastIO "Faster IO in C++" b
+ios_base::sync_with_stdio(false);
+endsnippet
+
+snippet vector "vector <int> (v)"
+vector <${1:int}> ${2:v} $0;
+endsnippet
+snippet tvector "vector inside template"
+vector <${1:int}> $0
+endsnippet
+
+snippet queue "queue <int> (q)"
+queue <${1:int}> ${2:q} $0;
+endsnippet
+snippet tqueue "queue inside template"
+queue <${1:int}> $0
+endsnippet
+
+snippet sortLambda "Sort with lambda" b
+sort(v.begin(),v.end(),[](${1:int} a,$1 b){ return ${2:a>b}; });$0
+endsnippet
+
+snippet debug "Debugging functions" b
+#define _E(args...) { vector<string> _v = split(#args, ','); err(_v.begin(), args); }
+
+vector<string> split(const string& s, char c) {
+	vector<string> v;
+	stringstream ss(s);
+	string x;
+	while (getline(ss, x, c))
+		v.emplace_back(x);
+	return move(v);
+}
+
+void err(vector<string>::iterator it) {}
+template<typename T, typename... Args>
+void err(vector<string>::iterator it, T a, Args... args) {
+	cerr << it -> substr((*it)[0] == ' ', it -> length()) << " = " << a << '\n';
+	err(++it, args...);
+}
+endsnippet
+
+snippet matrix "vector<vector<int> > v"
+vector <vector <${1:int}> > ${2:v}${3: (${4:n},vector<$1>(${5:m}$0))};
+endsnippet
+
+snippet cpp "Main cpp file" b
+#include <bits/stdc++.h>
+using namespace std;
+
+int main () {
+	ios_base::sync_with_stdio(false);
+	${VISUAL}$0
+}
+
+endsnippet
+
+snippet forfor "Nested for" b
+for (int ${1:i}=${2:0}; $1 ${3:< n}; ${4:++$1}) {
+	for (int ${5:j}=${6:0}; $5 ${7:< m}; ${8:++$5}) {
+		${VISUAL}$0
+	}
+}
+endsnippet
+
+snippet forv "Loop through vector" b
+for (auto& ${1:i} : ${2:v}) {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet whilecin "While cin >> n" b
+while (cin >> ${1:n}) {
+	${VISUAL}$0
+}
+endsnippet
