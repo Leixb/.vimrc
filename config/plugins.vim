@@ -52,7 +52,9 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets' "{{{2
 " Ultisnips: The ultimate solution for snippets in Vim
 " VimSnippets: Snippets files for various programming languages.
 let g:UltiSnipsUsePythonVersion = 3
-" More UltiSnips confiuration in mappings section
+let g:UltiSnipsSnippetsDir = $VIMCONF . '/UltiSnips'
+let g:UltiSnipsSnippetDirectories = ['UltiSnips', $VIMCONF . '/UltiSnips']
+" UltiSnips triggers confiuration in mappings section
 
 Plug 'majutsushi/tagbar' "{{{2
 " Vim plugin that displays tags in a window, ordered by scope
@@ -89,7 +91,9 @@ Plug 'vim-airline/vim-airline' "{{{2
 " Lean & mean status/tabline for vim that's light as air.
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#ycm#enabled = 1
+if $TERM!='linux'
 let g:airline_powerline_fonts = 1
+endif
 
 Plug 'LaTeX-Box-Team/LaTeX-Box' "{{{2
 " Lightweight Toolbox for LaTeX
@@ -179,18 +183,19 @@ Plug 'Shougo/neomru.vim' "{{{2
 Plug 'skywind3000/asyncrun.vim' "{{{2
 " Run Async Shell Commands in Vim 8.0 and Output to Quickfix Window
 
+Plug 'vim-scripts/Conque-GDB' "{{{2
+" GDB command line interface in Vim
+
+Plug 'flazz/vim-colorschemes' "{{{2
+" A collection if vim colorschemes
+
+Plug 'vim-airline/vim-airline-themes' "{{{2
+" A collection of themes for vim-airline
+
 " NVIM only {{{2
-if (has('nvim'))
-
-"Plug 'neomake/neomake' "{{{3
-" Asynchronous linting and make framework for Neovim/Vim
-
-endif
 
 " VIM only {{{2
-if (!has('nvim'))
-Plug 'vim-utils/vim-man'       "{{{3
+Plug 'vim-utils/vim-man',has('nvim') ? {'on':[]} : {} "{{{3
 " View man pages in vim. Grep for the man pages.
-endif
 
 call plug#end()

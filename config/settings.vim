@@ -54,7 +54,7 @@ set autoread
 
 " Wraping {{{1
 set colorcolumn=80
-set nowrap
+set wrap
 set linebreak
 set synmaxcol=200
 
@@ -116,12 +116,19 @@ else
 endif
 
 " Style {{{1
-set termguicolors
 
 let g:default_colorscheme ='distinguished'
 
+if $TERM=='xterm-termite'
+    set termguicolors
+elseif $TERM=='linux'
+    set t_Co=8
+    let g:default_colorscheme='solarized8_dark'
+else
+    set t_Co=256
+endif
+
 set background=dark
-exec 'colorscheme ' g:default_colorscheme
 
 hi clear SpellBad
 hi SpellBad cterm=underline ctermfg=red

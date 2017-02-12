@@ -21,15 +21,6 @@ nmap <F5> <leader>be
 "ROT13
 nnoremap <F6> mtggg?G`t
 
-function AfterAsync()
-    if ( g:asyncrun_code == 0 )
-        echom "Async finished; no errors reported"
-    else
-        echom "Async finished, returned code: " . g:asyncrun_code
-        copen
-    endif
-endfunction
-
 " Compile Async
 nnoremap <F9> :exec ':AsyncRun -post=:call\ AfterAsync() '. expand(&makeprg)<CR>
 
@@ -90,11 +81,11 @@ nnoremap <leader>dl :Denite line<CR>
 cmap w!! w !sudo tee > /dev/null %
 
 " Disable Arrows and Esc to train {{{1
-inoremap <Up> <nop>
-inoremap <Down> <nop>
-inoremap <Right> <nop>
-inoremap <Left> <nop>
-inoremap <ESC> <nop>
+"inoremap <Up> <nop>
+"inoremap <Down> <nop>
+"inoremap <Right> <nop>
+"inoremap <Left> <nop>
+"inoremap <ESC> <nop>
 
 " Easier keys to move between splits {{{1
 nnoremap <c-j> <c-w>j
