@@ -75,6 +75,10 @@ nnoremap <leader>vc :Denite -path=~/.vim/config file_rec<CR>
 
 " Denite search lines
 nnoremap <leader>dl :Denite line<CR>
+nnoremap <tab>      :Denite line<CR>
+
+" Denite jk to exit inser mode
+call denite#custom#map('insert','jk', '<denite:enter_mode:normal>','noremap')
 
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
@@ -106,10 +110,8 @@ augroup filetype_maps_vim
 augroup END
 
 " Jutge mappings {{{2
-nnoremap <silent> <F7> :Ss<CR>
-nnoremap <silent> <C-F7> :Wj<CR>
-nnoremap <F10> :Tj<CR>
-nnoremap <C-F10> :call FetJutge()<CR>
+nnoremap <F10> :call JutgeTest()<CR>
+nnoremap <C-F10> :call JutgeFet()<CR>
 
 " Compilation mappings {{{2
 nnoremap <C-F8> :call AfterMakeCwithIn()<CR>
@@ -121,11 +123,8 @@ else
 " NVIM mappings {{{1
 
 " Jutge.org keymaps {{{2
-nnoremap <silent> <F7> :Ss<CR>
-nnoremap <silent> <F31> :Wj<CR>
-nnoremap <F33> :term ./"_%:r.o"<CR>
-nnoremap <F10> :Tj<CR>
-nnoremap <F34> :call FetJutge()<CR>
+nnoremap <F10> :call JutgeTest()<CR>
+nnoremap <F34> :call JutgeFet()<CR>
 
 " Compile commands {{{2
 nnoremap <F32> :call AfterMakeCwithIn()<CR>
