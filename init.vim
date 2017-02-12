@@ -36,5 +36,3 @@ if (filereadable("local.vimrc"))
         !rm local.vimrc
     endif
 endif
-
-"source ~/.vim/bundle/jutge/plugin/jutge.vim
