@@ -101,6 +101,11 @@ Plug 'LaTeX-Box-Team/LaTeX-Box' "{{{2
 Plug 'godlygeek/tabular' "{{{2
 " Vim script for text filtering and alignment
 
+Plug 'junegunn/vim-easy-align' "{{{2
+" A Vim alignment plugin
+xmap <leader>ga <Plug>(EasyAlign)
+nmap <leader>ga <Plug>(EasyAlign)
+
 Plug 'plasticboy/vim-markdown' "{{{2
 " Syntax highlighting, matching rules and mappings for Markdown and extensions
 let g:vim_markdown_toc_autofit = 1
