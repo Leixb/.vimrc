@@ -55,7 +55,7 @@ function! JutgeTest(...)
     endif
 endfunction
 
-command! -nargs=? Testj call TestJutge(<f-args>)<CR>
+command! -nargs=? JutgeTest call TestJutge(<f-args>)<CR>
 
 function! JutgeFet()
     let s:option = confirm("This will move the current file to " . g:jutge_fets_folder . " proceed?", "&Yes\n&no", 1)
@@ -76,7 +76,7 @@ endfunction
 
 command! JutgeFet call JutgeFet()<CR>
 command! JutgSearch exec 'Denite -path=' . g:jutge_fets_folder ' file_rec'
-command! JutgGrep exec 'Denite -path=' . expand(g:jutge_fets_folder) ' grep'
+command! -nargs=? JutgGrep exec 'Denite -path=' . expand(g:jutge_fets_folder) ' grep -input=' . '<args>'
 
 function! AfterAsync()
     if ( g:asyncrun_code == 0 )
