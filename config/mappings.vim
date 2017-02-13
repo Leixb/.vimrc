@@ -97,7 +97,6 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
-
 if (!has('nvim'))
 
 " VIM mappings {{{1
@@ -117,7 +116,6 @@ nnoremap <C-F10> :call JutgeFet()<CR>
 nnoremap <C-F8> :call AfterMakeCwithIn()<CR>
 nnoremap <C-F9> :call AfterMakeC()<CR>
 
-
 else
 
 " NVIM mappings {{{1
@@ -129,7 +127,6 @@ nnoremap <F34> :call JutgeFet()<CR>
 " Compile commands {{{2
 nnoremap <F32> :call AfterMakeCwithIn()<CR>
 nnoremap <F33> :call AfterMakeC()<CR>
-
 
 " Filetype Specify keymaps {{{2
 
@@ -146,6 +143,5 @@ augroup END
 
 " Terminal mappings {{{2
 tnoremap <Esc> <C-\><C-n>
-
 
 endif

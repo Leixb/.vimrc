@@ -17,7 +17,6 @@ set laststatus=2
 set conceallevel=2
 set concealcursor=""
 
-
 " Indent and tabs {{{1
 set expandtab   "tab to spaces
 set tabstop=4
@@ -49,8 +48,6 @@ set wildignore+=*.pdf,*.odt
 " Buffer options {{{1
 set hidden
 set autoread
-
-
 
 " Wraping {{{1
 set colorcolumn=80

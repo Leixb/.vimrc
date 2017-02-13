@@ -188,9 +188,6 @@ Plug 'Shougo/neomru.vim' "{{{2
 Plug 'skywind3000/asyncrun.vim' "{{{2
 " Run Async Shell Commands in Vim 8.0 and Output to Quickfix Window
 
-Plug 'vim-scripts/Conque-GDB' "{{{2
-" GDB command line interface in Vim
-
 Plug 'flazz/vim-colorschemes' "{{{2
 " A collection if vim colorschemes
 
