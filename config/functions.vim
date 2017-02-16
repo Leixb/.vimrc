@@ -49,9 +49,9 @@ let g:jutge_fets_folder=g:jutge_folder . '/Fets'
 function! JutgeTest(...)
     let s:jutge_flags = join(a:000)
     if has('nvim')
-        exec 'term ' . g:jutge_testj . ' ' . s:jutge_flags . '%'
+        exec 'term ' . g:jutge_testj . ' ' . s:jutge_flags . '"%"'
     else
-        exec '!' . g:jutge_testj . ' ' . s:jutge_flags . '%'
+        exec '!' . g:jutge_testj . ' ' . s:jutge_flags . '"%"'
     endif
 endfunction
 
