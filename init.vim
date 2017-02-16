@@ -10,6 +10,8 @@ source $VIMCONF/plugins.vim
 " Set colorscheme, must be called after plugins if themes are managed by
 " vim-plug
 exec 'colorscheme ' g:default_colorscheme
+hi clear SpellBad
+hi SpellBad cterm=underline ctermfg=red gui=undercurl guifg=#900019  
 
 " Source Denite menus; must be called after plugins
 source $VIMCONF/denite.vim
@@ -36,3 +38,4 @@ if (filereadable("local.vimrc"))
         !rm local.vimrc
     endif
 endif
+

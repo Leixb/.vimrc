@@ -30,7 +30,7 @@ set smartindent
 set cindent
 
 set list
-let &listchars="tab:|||>,trail:·"    
+set listchars="tab:|||>,trail:·"
 
 " Search {{{1
 set hlsearch
@@ -88,7 +88,11 @@ set directory   =$HOME/.vim/files/swap//
 set updatecount =100
 set undofile
 set undodir     =$HOME/.vim/files/undo/
-set viminfo ='100,n$HOME/.vim/files/info/viminfo
+if has('nvim')
+    set shada ='100,n$HOME/.vim/files/info/nvimshada
+else
+    set viminfo ='100,n$HOME/.vim/files/info/viminfo
+endif
 
 " python {{{1
 let g:python_host_skip_check = 1
@@ -117,6 +121,7 @@ endif
 let g:default_colorscheme ='distinguished'
 
 if $TERM=='xterm-termite'
+    set t_Co=256
     set termguicolors
 elseif $TERM=='linux'
     set t_Co=8
@@ -126,6 +131,3 @@ else
 endif
 
 set background=dark
-
-hi clear SpellBad
-hi SpellBad cterm=underline ctermfg=red
