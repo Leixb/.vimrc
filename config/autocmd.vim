@@ -23,8 +23,8 @@ endif
 if !filereadable("makefile")
     augroup filetype_make
         autocmd!
-        autocmd Filetype cpp        set makeprg=g++\ -std=c++11\ -g\ \"%:r.cpp\"\ -o\ \"_%:r.o\"
-        autocmd Filetype c          set makeprg=gcc\ -g\ \"%:r.c\"\ -o\ \"_%:r.o\"
+        autocmd Filetype cpp        set makeprg=g++\ -std=c++11\ -g\ \"%:r.cpp\"\ -o\ \"_%:r\"
+        autocmd Filetype c          set makeprg=gcc\ -g\ \"%:r.c\"\ -o\ \"_%:r\"
         autocmd Filetype python     set makeprg=chmod\ +x\ \"%\"
         autocmd Filetype python3    set makeprg=chmod\ +x\ \"%\"
         autocmd Filetype sh         set makeprg=chmod\ +x\ \"%\"

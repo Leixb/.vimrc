@@ -35,7 +35,7 @@ noremap <Leader>sv :source $MYVIMRC<CR>
 
 noremap <Leader>bd :bdelete!<CR>
 
-noremap <leader>db :term gdb "_%:r.o"<CR>
+noremap <leader>db :term gdb "_%:r"<CR>
 noremap <leader>vc :e _local_settings_vim_danger<CR>
 noremap <leader>mk :make<CR>
 noremap <leader>bn :bn!<CR>
