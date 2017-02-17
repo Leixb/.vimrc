@@ -8,7 +8,13 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 " Plugin manager {{{1
-call plug#begin('~/.vim/plugged')
+call plug#begin(g:plug_plugin_folder)
+
+Plug 'Leixb/vim-jutge-utils' "{{{2
+" Small plugin to automate jutge.org test cases
+let g:jutge_testj='testj'
+let g:jutge_folder=$HOME . '/Documents/jutge'
+let g:jutge_done_folder=g:jutge_folder . '/Fets'
 
 Plug 'Raimondi/delimitMate' "{{{2
 " Automatic closing of quotes, parenthesis, brackets, etc., 
