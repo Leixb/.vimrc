@@ -3,19 +3,17 @@
 " Change VIM cursor in insert mode {{{1
 " For shape change in NVIM see: $NVIM_TUI_ENABLE_CURSOR_SHAPE) 
 if !has('nvim')
-    if has("autocmd")
-        augroup vimcursorchange
-            autocmd!
-            autocmd VimEnter,InsertLeave * silent execute '!echo -ne "\e[1 q"' | redraw!
-            autocmd InsertEnter,InsertChange *
-                        \ if v:insertmode == 'i' | 
-                        \   silent execute '!echo -ne "\e[5 q"' | redraw! |
-                        \ elseif v:insertmode == 'r' |
-                        \   silent execute '!echo -ne "\e[3 q"' | redraw! |
-                        \ endif
-            autocmd VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
-        augroup END
-    endif
+    augroup vimcursorchange
+        autocmd!
+        autocmd VimEnter,InsertLeave * silent execute '!echo -ne "\e[1 q"' | redraw!
+        autocmd InsertEnter,InsertChange *
+                    \ if v:insertmode == 'i' | 
+                    \   silent execute '!echo -ne "\e[5 q"' | redraw! |
+                    \ elseif v:insertmode == 'r' |
+                    \   silent execute '!echo -ne "\e[3 q"' | redraw! |
+                    \ endif
+        autocmd VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
+    augroup END
 endif
 
 " Filetypes {{{1

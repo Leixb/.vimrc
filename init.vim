@@ -29,7 +29,9 @@ if filereadable($VIMCONF . '/abbreviations.vim')
 endif
 
 " Custom autocommmands (mainly filetype specific)
-source $VIMCONF/autocmd.vim
+if has('autocmd')
+    source $VIMCONF/autocmd.vim
+endif
 
 " Load local.vimrc if exists and warn before doing so
 if (filereadable("local.vimrc"))
