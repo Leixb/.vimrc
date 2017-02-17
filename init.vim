@@ -1,10 +1,12 @@
 " Main vimconfig file
 
-let $VIMCONF =$HOME . '/.vim/config'
+let $VIMFOLDER = $HOME . '/.vim'
+let $VIMCONF = $VIMFOLDER . '/config'
 
 source $VIMCONF/settings.vim
 
 " Plugins managed by vim-plug and their specific settings
+let g:plug_plugin_folder = $VIMFOLDER . '/plugged'
 source $VIMCONF/plugins.vim
 
 " Set colorscheme, must be called after plugins if themes are managed by
