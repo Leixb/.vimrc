@@ -40,7 +40,7 @@ function! AfterMakeC(...)
     endif
 endfunction
 
-command! -nargs=* -complete=file Run call AfterMakeC(<f-args>)<CR>
+command! -nargs=* -complete=file Run call AfterMakeC(<f-args>)
 
 function! AfterAsync()
     if ( g:asyncrun_code == 0 )
