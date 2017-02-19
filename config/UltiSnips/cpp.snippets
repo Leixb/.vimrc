@@ -26,7 +26,7 @@ istream& operator>>(istream& is, vector<T>& v) {
 }
 endsnippet
 
-snippet function_istram_pair "istream pair" b
+snippet function_istream_pair "istream pair" b
 template <typename T1, typename T2>
 istream& operator>> (istream& is, pair<T1,T2>& p) {
 	is >> p.first >> p.second;
@@ -34,9 +34,9 @@ istream& operator>> (istream& is, pair<T1,T2>& p) {
 }
 endsnippet
 
-snippet function_ostram_pair "ostream pair"
+snippet function_ostream_pair "ostream pair"
 template <typename T1, typename T2>
-istream& operator<< (istream& is, const pair<T1,T2>& p) {
+ostream& operator<< (ostream& os, const pair<T1,T2>& p) {
 	os << '{' << p.first << ',' << p.second << '}';
 	return os;
 }
