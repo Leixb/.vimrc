@@ -50,3 +50,5 @@ function! AfterAsync()
         copen
     endif
 endfunction
+
+command! MakeExe !i686-w64-mingw32-g++ "%" --static -o "%:r.exe"
