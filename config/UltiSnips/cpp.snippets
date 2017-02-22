@@ -122,3 +122,10 @@ while (cin >> ${1:n}) {
 	${VISUAL}$0
 }
 endsnippet
+
+snippet whilecinInt "while ---" b
+${1:int} ${2:a};
+while (cin >> ${2/,/ >> /g}) {
+	${VISUAL}$0
+}
+endsnippet
