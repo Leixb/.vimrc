@@ -29,9 +29,6 @@ set autoindent
 set smartindent
 set cindent
 
-set list
-set listchars="tab:|||>,trail:·"
-
 " Search {{{1
 set hlsearch
 set incsearch
