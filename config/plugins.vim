@@ -12,7 +12,7 @@ call plug#begin(g:plug_plugin_folder)
 
 Plug 'Leixb/vim-jutge-utils' "{{{2
 " Small plugin to automate jutge.org test cases
-let g:jutge_testj='testj'
+let g:jutge_command='jutge'
 let g:jutge_folder=$HOME . '/Documents/jutge'
 let g:jutge_done_folder=g:jutge_folder . '/Fets'
 
@@ -199,6 +199,9 @@ Plug 'flazz/vim-colorschemes' "{{{2
 
 Plug 'vim-airline/vim-airline-themes' "{{{2
 " A collection of themes for vim-airline
+
+Plug 'danilo-augusto/vim-afterglow' "{{{2
+" Vim adaptation of the afterglow colorscheme
 
 " NVIM only {{{2
 
