@@ -105,7 +105,7 @@ if (!has('nvim'))
 augroup filetype_maps_vim
     autocmd!
     autocmd Filetype java map <C-F9> :make<CR><CR>:!java "%:r"<CR>
-    autocmd Filetype tex map <C-F9> :!pkill mupdf <CR><CR> :!mupdf "%:r.pdf" & <CR><CR>
+    autocmd Filetype tex map <C-F9> :!zathura "%:r.pdf" & <CR><CR>
 augroup END
 
 " Jutge mappings {{{2
@@ -136,8 +136,8 @@ augroup filetype_maps_nvim
     autocmd Filetype python3 map <F33> :term "./%"<CR>
     autocmd Filetype sh map <F33> :term "./%"<CR>
     autocmd Filetype java map <F33> :term java "%:r"<CR>
-    autocmd Filetype tex map <F33> :!pkill mupdf <CR><CR> :!mupdf "%:r.pdf" & <CR><CR>
-    autocmd Filetype markdown map <F33> :!pkill mupdf <CR><CR> :!mupdf "%:r.pdf" & <CR><CR>
+    autocmd Filetype tex map <F33> :!zathura "%:r.pdf" & <CR><CR>
+    autocmd Filetype markdown map <F33> :!zathura "%:r.pdf" & <CR><CR>
     autocmd Filetype haskell map <F33> :term runghc "%"<CR>
 augroup END
 
