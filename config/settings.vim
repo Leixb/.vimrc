@@ -98,6 +98,9 @@ endif
 if !isdirectory(&undodir)
     exec '!mkdir ' . &undodir
 endif
+if !isdirectory(expand("$HOME/.vim/files/info"))
+    exec '!mkdir ' . expand("$HOME/.vim/files/info")
+endif
 
 if has('nvim')
     set shada ='100,n$HOME/.vim/files/info/nvimshada
