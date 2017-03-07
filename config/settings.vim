@@ -81,10 +81,24 @@ set backup
 set backupdir   =$HOME/.vim/files/backup/
 set backupext   =-vimbackup
 set backupskip  =
-set directory   =$HOME/.vim/files/swap//
+set directory   =$HOME/.vim/files/swap/
 set updatecount =100
 set undofile
 set undodir     =$HOME/.vim/files/undo/
+
+if !isdirectory(expand("$HOME/.vim/files"))
+    exec '!mkdir ' . expand("$HOME/.vim/files")
+endif
+if !isdirectory(&backupdir)
+    exec '!mkdir ' . &backupdir
+endif
+if !isdirectory(&directory)
+    exec '!mkdir ' . &directory
+endif
+if !isdirectory(&undodir)
+    exec '!mkdir ' . &undodir
+endif
+
 if has('nvim')
     set shada ='100,n$HOME/.vim/files/info/nvimshada
 else
@@ -108,8 +122,10 @@ if (has('nvim'))
 else 
 
 " VIM {{{2
+if has('gui')
     set guioptions -=T
     set guioptions -=m 
+endif
 
 endif
 
@@ -122,7 +138,7 @@ if $TERM=='xterm-termite'
     set termguicolors
 elseif $TERM=='linux'
     set t_Co=8
-    let g:default_colorscheme='solarized8_dark'
+    let g:default_colorscheme='default'
 else
     set t_Co=256
 endif
