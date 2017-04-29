@@ -25,7 +25,7 @@ nnoremap <F6> mtggg?G`t
 nnoremap <F9> :exec ':AsyncRun -post=:call\ AfterAsync() '. expand(&makeprg)<CR>
 
 "Fix Identation
-nnoremap <F12> mtgg=G`t 
+nnoremap <F12> mtgg=G`t
 
 " Leader keymaps {{{1
 nnoremap <Leader>c :set cursorline! <CR>

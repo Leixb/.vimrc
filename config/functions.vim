@@ -27,7 +27,7 @@ function! AfterMakeC(...)
         return -1
     endif
 
-    let s:filename = '_' . expand("%:r") 
+    let s:filename = '_' . expand("%:r")
     if filereadable(s:filename)
         if has('nvim')
             exec 'term ./' . shellescape(s:filename) . s:in . s:out

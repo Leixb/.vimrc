@@ -7,7 +7,7 @@ syntax on
 
 " Show {{{1
 set number
-set showmode 
+set showmode
 set showcmd
 
 set visualbell
@@ -53,8 +53,8 @@ set linebreak
 set synmaxcol=200
 
 " Timeout {{{1
-set timeout 
-set timeoutlen=1000 
+set timeout
+set timeoutlen=1000
 set ttimeoutlen=100
 
 " Mouse {{{1
@@ -66,7 +66,7 @@ set sidescrolloff=15
 set sidescroll=1
 
 " Backspace {{{1
-set backspace=indent,eol,start 
+set backspace=indent,eol,start
 
 " Modelines {{{1
 set modeline
@@ -110,8 +110,8 @@ endif
 
 " python {{{1
 let g:python_host_skip_check = 1
-let g:python_host_prog = '/usr/bin/python2'    
-let g:python3_host_prog = '/usr/bin/python'    
+let g:python_host_prog = '/usr/bin/python2'
+let g:python3_host_prog = '/usr/bin/python'
 
 " Make default tex filetype if empty latex and not plaintex
 let g:tex_flavor = "latex"
@@ -122,12 +122,12 @@ if (has('nvim'))
 " NVIM {{{2
     let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
-else 
+else
 
 " VIM {{{2
 if has('gui')
     set guioptions -=T
-    set guioptions -=m 
+    set guioptions -=m
 endif
 
 endif
