@@ -1,13 +1,13 @@
-" Custom autocmd 
+" Custom autocmd
 
 " Change VIM cursor in insert mode {{{1
-" For shape change in NVIM see: $NVIM_TUI_ENABLE_CURSOR_SHAPE) 
+" For shape change in NVIM see: $NVIM_TUI_ENABLE_CURSOR_SHAPE)
 if !has('nvim')
     augroup vimcursorchange
         autocmd!
         autocmd VimEnter,InsertLeave * silent execute '!echo -ne "\e[1 q"' | redraw!
         autocmd InsertEnter,InsertChange *
-                    \ if v:insertmode == 'i' | 
+                    \ if v:insertmode == 'i' |
                     \   silent execute '!echo -ne "\e[5 q"' | redraw! |
                     \ elseif v:insertmode == 'r' |
                     \   silent execute '!echo -ne "\e[3 q"' | redraw! |
@@ -44,12 +44,4 @@ augroup filetype_vim
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
 augroup END
-
-" Identline no conceal on cursor for latex and markdown {{{2
-augroup identline_fix
-    autocmd!
-    autocmd FileType tex let g:indentLine_concealcursor = ""
-    autocmd FileType markdown let g:indentLine_concealcursor = ""
-augroup END
-
 
