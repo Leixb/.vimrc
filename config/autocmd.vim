@@ -35,7 +35,6 @@ endif
 " filetype autocmd allways run {{{2
 augroup filetype_allways
     autocmd!
-    autocmd Filetype cpp Docset cpp
     autocmd Filetype tex set concealcursor=""
 augroup END
 
