@@ -123,6 +123,9 @@ let g:startify_custom_header =
 Plug 'flazz/vim-colorschemes' "{{{3
 " A collection if vim colorschemes
 
+Plug 'chriskempson/base16-vim'
+" Base16 colorscheme for Vim
+
 " Buffers {{{2
 
 Plug 'Shougo/denite.nvim', has('nvim') ? { 'do': ':UpdateRemotePlugins' } : {} "{{{3

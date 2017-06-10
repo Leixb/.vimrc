@@ -134,7 +134,7 @@ endif
 
 " Style {{{1
 
-let g:default_colorscheme ='distinguished'
+let g:default_colorscheme ='base16-default-dark'
 
 if $TERM=='xterm-termite'
     set t_Co=256
