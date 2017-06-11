@@ -7,6 +7,11 @@ cnoremap jk <C-c>
 " More normal behaviour for Y
 nnoremap Y y$
 
+" Make dot work on visual lines
+xnoremap . :norm.<CR>
+" Macro on visual line selction (only q macro)
+xnoremap Q :'<,'>:normal @q<CR>
+
 "nnoremap <C-S-L> :nohl<CR><C-L>"
 nnoremap <leader>r :nohl<CR><C-L>"
 

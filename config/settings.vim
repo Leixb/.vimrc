@@ -29,22 +29,30 @@ set autoindent
 set smartindent
 set cindent
 
+set breakindent
+set showbreak=\\\\\
+
 " Search {{{1
 set hlsearch
 set incsearch
 set ignorecase
+set infercase
 set smartcase
 set wrapscan
 
 " Wildmenu {{{1
 set wildmenu
+set wildmode=full
 set wildignore=*.o
 set wildignore+=*.png,*.jpg,*.gif
 set wildignore+=*.pdf,*.odt
 
+" Completion {{{1
+set complete+=kspell "Completion uses spell dict
+
 " Buffer options {{{1
 set hidden
-set autoread
+set autoread " Automatically update changes from other programs
 
 " Wraping {{{1
 set colorcolumn=80
@@ -116,13 +124,8 @@ let g:python3_host_prog = '/usr/bin/python'
 " Make default tex filetype if empty latex and not plaintex
 let g:tex_flavor = "latex"
 
-" NVIM and VIM specifics {{{1
-if (has('nvim'))
-
-" NVIM {{{2
-    let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-
-else
+" VIM specifics {{{1
+if (!has('nvim'))
 
 " VIM {{{2
 if has('gui')
@@ -139,11 +142,17 @@ let g:default_colorscheme ='base16-default-dark'
 if $TERM=='xterm-termite'
     set t_Co=256
     set termguicolors
+    if has('nvim')
+        set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
+    endif
 elseif $TERM=='linux'
     set t_Co=8
     let g:default_colorscheme='default'
 else
     set t_Co=256
 endif
+
+" Avoid performace issues with big files
+set synmaxcol=200
 
 set background=dark

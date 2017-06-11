@@ -44,3 +44,8 @@ augroup filetype_vim
     autocmd FileType vim setlocal foldmethod=marker
 augroup END
 
+" Equalize splits on resize 1{{{
+augroup FixVimResize
+    autocmd!
+    autocmd VimResized * wincmd =
+augroup END
