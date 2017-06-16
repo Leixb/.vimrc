@@ -150,8 +150,6 @@ Plug 'tpope/vim-fugitive' "{{{3
 Plug 'vim-utils/vim-man',has('nvim') ? {'on':[]} : {} "{{{3
 " View man pages in vim. Grep for the man pages.
 
-call plug#end()
-
 " Syntax {{{2
 Plug 'LaTeX-Box-Team/LaTeX-Box' "{{{3
 " Lightweight Toolbox for LaTeX
@@ -167,6 +165,9 @@ Plug 'vim-pandoc/vim-pandoc' "{{{3
 
 Plug 'vim-pandoc/vim-pandoc-syntax' "{{{3
 " pandoc markdown syntax, to be installed alongside vim-pandoc
+
+Plug 'octol/vim-cpp-enhanced-highlight' "{{{3
+" Additional Vim syntax highlighting for C++ (including C++11/14)
 
 " Misc {{{2
 
@@ -186,3 +187,4 @@ Plug 'rhysd/vim-grammarous', {'on' : 'GrammarousCheck'} "{{{3
 " A powerful grammar checker for Vim using LanguageTool.
 let g:grammarous#use_vim_spelllang=1
 
+call plug#end()
