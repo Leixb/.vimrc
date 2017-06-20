@@ -4,6 +4,9 @@ let mapleader=" "
 inoremap jk <Esc>
 cnoremap jk <C-c>
 
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cnoremap w!! w !sudo tee > /dev/null %
+
 " More normal behaviour for Y
 nnoremap Y y$
 
@@ -51,9 +54,9 @@ noremap <leader>bp :bp!<CR>
 " YCM {{{2
 nnoremap <leader>g :YcmCompleter GoTo<CR>
 nnoremap <leader>gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
-noremap <leader>gt :YcmCompleter GetType<CR>
-noremap <leader>fx :YcmCompleter FixIt<CR>
-map <silent> <F8> :YcmForceCompileAndDiagnostics<CR><CR>
+nnoremap <leader>gt :YcmCompleter GetType<CR>
+nnoremap <leader>fx :YcmCompleter FixIt<CR>
+noremap <silent> <F8> :YcmForceCompileAndDiagnostics<CR><CR>
 
 " List Toggle {{{2
 let g:lt_location_list_toggle_map = '<leader>l'
@@ -85,9 +88,12 @@ nnoremap <tab>      :Denite line<CR>
 " Denite jk to exit inser mode
 call denite#custom#map('insert','jk', '<denite:enter_mode:normal>','noremap')
 
-
-" Allow saving of files as sudo when I forgot to start vim using sudo.
-cmap w!! w !sudo tee > /dev/null %
+" Latex-Box
+inoremap ]] <Plug>LatexCloseCurEnv
+nnoremap <leader>lce <Plug>LatexChangeEnv
+nnoremap <leader>lts <Plug>LatexToggleStarEnv
+vnoremap <leader>lwc <Plug>LatexWrapSelection
+vnoremap <leader>lwe <Plug>LatexEnvWrapSelection
 
 " Disable Arrows and Esc to train {{{1
 "inoremap <Up> <nop>

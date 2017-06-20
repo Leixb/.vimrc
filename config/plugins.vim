@@ -154,6 +154,30 @@ Plug 'vim-utils/vim-man',has('nvim') ? {'on':[]} : {} "{{{3
 Plug 'LaTeX-Box-Team/LaTeX-Box' "{{{3
 " Lightweight Toolbox for LaTeX
 
+"Remove backslash for correct completion using YCM (avoid \\)
+let g:LatexBox_completion_commands = [
+    \ {'word': 'begin{' },
+    \ {'word': 'end{' },
+    \ {'word': 'item' },
+    \ {'word': 'label{' },
+    \ {'word': 'ref{' },
+    \ {'word': 'eqref{eq:' },
+    \ {'word': 'cite{' },
+    \ {'word': 'chapter{' },
+    \ {'word': 'section{' },
+    \ {'word': 'subsection{' },
+    \ {'word': 'subsubsection{' },
+    \ {'word': 'paragraph{' },
+    \ {'word': 'nonumber' },
+    \ {'word': 'bibliography' },
+    \ {'word': 'bibliographystyle' },
+    \ ]
+let g:LatexBox_latexmk_async = 1
+let g:LatexBox_viewer = 'zathura'
+let g:LatexBox_quickfix = 3
+let g:LatexBox_autojump = 1
+let g:LatexBox_latexmk_options = "-pdflatex='pdflatex -synctex=1 \%O \%S'"
+
 Plug 'plasticboy/vim-markdown' "{{{3
 " Syntax highlighting, matching rules and mappings for Markdown and extensions
 let g:vim_markdown_toc_autofit = 1
