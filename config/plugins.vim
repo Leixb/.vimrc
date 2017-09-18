@@ -13,7 +13,7 @@ call plug#begin(g:plug_plugin_folder)
 " Completion {{{2
 " Plug 'Valloric/YouCompleteMe' {{{3
 
-function! BuildYCM(info)
+function! BuildYCM(info) abort
 " Run install.py for YCM if first install
   if a:info.status == 'installed' || a:info.force
     !./install.py\ --clang-completer
@@ -217,8 +217,8 @@ Plug 'kovetskiy/sxhkd-vim' "{{{3
 Plug 'Leixb/vim-jutge-utils' "{{{3
 " Small plugin to automate jutge.org test cases
 let g:jutge_command='jutge'
-let g:jutge_folder=$HOME . '/Documents/Programs/jutge'
-let g:jutge_done_folder=g:jutge_folder . '/Fets'
+let g:jutge_folder=$HOME . '/Documents/Universitat/PROG'
+let g:jutge_done_folder=g:jutge_folder . '/Done'
 
 Plug 'skywind3000/asyncrun.vim' "{{{3
 " Run Async Shell Commands in Vim 8.0 and Output to Quickfix Window

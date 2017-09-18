@@ -1,9 +1,13 @@
 " Global vim settings
 
-set nocompatible
+if &compatible
+  set compatible
+endif
 
 filetype plugin indent on
-syntax on
+if !exists("g:syntax_on")
+    syntax enable
+endif
 
 " Show {{{1
 set number
@@ -19,7 +23,7 @@ set concealcursor=""
 
 " Indent and tabs {{{1
 set expandtab   "tab to spaces
-set tabstop=4
+set tabstop=8
 set shiftwidth=4
 set softtabstop=4
 set shiftround

@@ -13,7 +13,7 @@ command! Qa qa
 command! QA qa
 
 " Custom functions {{{1
-function! AfterMakeC(...)
+function! AfterMakeC(...) abort
     let s:in = ''
     let s:out = ''
     if a:0 >= 1
@@ -50,7 +50,7 @@ endfunction
 
 command! -nargs=* -complete=file Run call AfterMakeC(<f-args>)
 
-function! AfterAsync()
+function! AfterAsync() abort
     if ( g:asyncrun_code == 0 )
         echom "Async finished; no errors reported"
     else
