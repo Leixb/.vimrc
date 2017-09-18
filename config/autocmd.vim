@@ -29,6 +29,8 @@ if !filereadable("makefile")
         autocmd Filetype java       set makeprg=javac\ \"%:r.java\"
         autocmd Filetype tex        set makeprg=pdflatex\ \"%:r.tex\"
         autocmd Filetype markdown   set makeprg=pandoc\ -o\ \"%:r.pdf\"\ \"%\"
+        autocmd FileType rust       set makeprg=cargo\ build
+        autocmd FileType arduino    set makeprg=arduino\ --verify\ \"%\"
     augroup END
 endif
 

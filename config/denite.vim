@@ -1,14 +1,17 @@
-" Custom Denite menus
 
+call denite#custom#var('file_rec', 'command',
+    \ ['rg', '--files', '--glob', '!.git', ''])
+
+" Custom Denite menus
 let s:menus = {}
 
 " Denite menu {{{1
 let s:menus.denite = { 'description': 'Defined denite menus' }
 
 let s:menus.denite.command_candidates = [
-    \ ['git commands       (Fugitive)', 'Denite menu:git'],
-    \ ['Ycm commands                 ', 'Denite menu:ycm'],
-    \ ['Jutge commands               ', 'Denite menu:jutge'],
+    \ ['git commands       (Fugitive)   ', 'Denite menu:git'],
+    \ ['Ycm commands                    ', 'Denite menu:ycm'],
+    \ ['Jutge commands                  ', 'Denite menu:jutge'],
     \ ]
 
 " YCM menu {{{1
@@ -38,7 +41,18 @@ let s:menus.ycm.command_candidates = [
 " Jutge menu {{{1
 let s:menus.jutge = { 'description' : 'Jutge.org commands' }
 
-let s:menus.jutge = []
+let s:menus.jutge.command_candidates = [
+            \ ['Add Cases                                   ', 'JutgeAddCases'],
+            \ ['Download                                    ', 'JutgeDownload'],
+            \ ['Fet                                         ', 'JutgeFet'],
+            \ ['Get Name                                    ', 'JutgeGet Name'],
+            \ ['Get Code                                    ', 'JutgeGet Code'],
+            \ ['Get Statement                               ', 'JutgeGet Statement'],
+            \ ['Get Samples                                 ', 'JutgeGet Samples'],
+            \ ['Grep                                        ', 'JutgeGrep'],
+            \ ['Search                                      ', 'JutgeSearch'],
+            \ ['Test                                        ', 'JutgeTest'],
+            \ ]
 
 " Git menu (fugitive') {{{1
 let s:menus.git = { 'description' : 'Git fugitive commands' }

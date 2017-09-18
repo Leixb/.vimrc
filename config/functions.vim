@@ -28,11 +28,19 @@ function! AfterMakeC(...)
     endif
 
     let s:filename = '_' . expand("%:r")
-    if filereadable(s:filename)
+    if (filereadable(s:filename) || &ft=='rust')
         if has('nvim')
-            exec 'term ./' . shellescape(s:filename) . s:in . s:out
+            if (&ft=='rust')
+                exec 'term cargo run' . s:in . s:out
+            else
+                exec 'term ./' . shellescape(s:filename) . s:in . s:out
+            endif
         else
-            exec '!./' . shellescape(s:filename) . s:in . s:out
+            if (&ft=='rust')
+                exec '!cargo run' . s:in . s:out
+            else
+                exec '!./' . shellescape(s:filename) . s:in . s:out
+            endif
         endif
     else
         echoerr "File " . s:filename . " not found"

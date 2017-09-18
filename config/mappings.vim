@@ -19,10 +19,10 @@ xnoremap Q :'<,'>:normal @q<CR>
 nnoremap <leader>r :nohl<CR><C-L>"
 
 " F maps {{{1
-nnoremap <F1> :NERDTreeToggle<CR>
-nnoremap <F2> :bp!<CR>
-nnoremap <F3> :bn!<CR>
-nnoremap <F4> :TagbarToggle<CR>
+nnoremap <silent> <special> <F1> :NERDTreeToggle <Bar> if &filetype ==# 'nerdtree' <Bar> wincmd p <Bar> endif<CR>
+nnoremap <silent> <F2> :bp!<CR>
+nnoremap <silent> <F3> :bn!<CR>
+nnoremap <silent> <F4> :TagbarToggle<CR>
 
 " Buferexplorer
 nmap <F5> <leader>be
@@ -36,18 +36,18 @@ nnoremap <F9> :exec ':AsyncRun -post=:call\ AfterAsync() '. expand(&makeprg)<CR>
 nnoremap <F12> mtgg=G`t
 
 " Leader keymaps {{{1
-nnoremap <Leader>c :set cursorline! <CR>
+nnoremap <silent> <Leader>c :set cursorline! <CR>
 
-noremap <Leader>ev :vsplit $MYVIMRC<CR>
-noremap <Leader>sv :source $MYVIMRC<CR>
+noremap <silent> <Leader>ev :vsplit $MYVIMRC<CR>
+noremap <silent> <Leader>sv :source $MYVIMRC<CR>
 
-noremap <Leader>bd :bdelete!<CR>
+noremap <silent> <Leader>bd :bdelete!<CR>
 
-noremap <leader>db :term gdb "_%:r"<CR>
-noremap <leader>vc :e _local_settings_vim_danger<CR>
-noremap <leader>mk :make<CR>
-noremap <leader>bn :bn!<CR>
-noremap <leader>bp :bp!<CR>
+noremap <silent> <leader>db :term gdb "_%:r"<CR>
+noremap <silent> <leader>vc :e _local_settings_vim_danger<CR>
+noremap <silent> <leader>mk :make<CR>
+noremap <silent> <leader>bn :bn!<CR>
+noremap <silent> <leader>bp :bp!<CR>
 
 " Custom plugins mappings {{{1
 
@@ -77,18 +77,19 @@ nnoremap <leader>be :Denite buffer<CR>
 
 " Denite vim-grep
 nnoremap <leader>fg :Denite -auto-preview grep<CR>
+nnoremap <CR> :Denite -auto-preview grep<CR>
 
 " Denite vimconfig
 nnoremap <leader>vc :Denite -path=~/.vim/config file_rec<CR>
 
 " Denite search lines
-nnoremap <leader>dl :Denite line<CR>
-nnoremap <tab>      :Denite line<CR>
+nnoremap <leader>dl :Denite -auto-preview line<CR>
+nnoremap <tab>      :Denite -auto-preview line<CR>
 
 " Denite jk to exit inser mode
 call denite#custom#map('insert','jk', '<denite:enter_mode:normal>','noremap')
 
-" Latex-Box
+" Latex-Box "{{{2
 inoremap ]] <Plug>LatexCloseCurEnv
 nnoremap <leader>lce <Plug>LatexChangeEnv
 nnoremap <leader>lts <Plug>LatexToggleStarEnv

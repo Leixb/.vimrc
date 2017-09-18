@@ -77,6 +77,12 @@ Plug 'tpope/vim-repeat' "{{{3
 Plug 'godlygeek/tabular' "{{{3
 " Vim script for text filtering and alignment
 
+Plug 'tpope/vim-eunuch' "{{{3
+" helpers for UNIX
+
+Plug 'tpope/tpope-vim-abolish' "{{{3
+" easily search for, substitute, and abbreviate multiple variants of a word
+
 " Interface {{{2
 
 Plug 'thaerkh/vim-indentguides' "{{{3
@@ -135,8 +141,9 @@ Plug 'Shougo/denite.nvim', has('nvim') ? { 'do': ':UpdateRemotePlugins' } : {} "
 Plug 'majutsushi/tagbar' "{{{3
 " Vim plugin that displays tags in a window, ordered by scope
 
-Plug 'scrooloose/nerdtree' "{{{3
+Plug 'scrooloose/nerdtree' ", {'on':[]} \"{{{3
 " A tree explorer plugin for vim.
+let g:NERDTreeHijackNetrw=0
 
 Plug 'Xuyuanp/nerdtree-git-plugin' "{{{3
 " A plugin of NERDTree showing git status
@@ -146,6 +153,12 @@ Plug 'sjl/gundo.vim' "{{{3
 
 Plug 'tpope/vim-fugitive' "{{{3
 " Git wrapper
+
+Plug 'tpope/vim-rhubarb' "{{{3
+" GitHub extension for fugitive.vim
+
+Plug 'tpope/vim-vinegar' "{{{3
+" combine with netrw to create a delicious salad dressing
 
 Plug 'vim-utils/vim-man',has('nvim') ? {'on':[]} : {} "{{{3
 " View man pages in vim. Grep for the man pages.
@@ -193,12 +206,18 @@ Plug 'vim-pandoc/vim-pandoc-syntax' "{{{3
 Plug 'octol/vim-cpp-enhanced-highlight' "{{{3
 " Additional Vim syntax highlighting for C++ (including C++11/14)
 
+Plug 'rust-lang/rust.vim' "{{{3
+" Vim configuration for Rust.
+
+Plug 'kovetskiy/sxhkd-vim' "{{{3
+" Vim plugin for sxhkd (Simple X hotkey daemon)
+
 " Misc {{{2
 
 Plug 'Leixb/vim-jutge-utils' "{{{3
 " Small plugin to automate jutge.org test cases
 let g:jutge_command='jutge'
-let g:jutge_folder=$HOME . '/Documents/jutge'
+let g:jutge_folder=$HOME . '/Documents/Programs/jutge'
 let g:jutge_done_folder=g:jutge_folder . '/Fets'
 
 Plug 'skywind3000/asyncrun.vim' "{{{3
