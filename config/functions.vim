@@ -27,7 +27,7 @@ function! AfterMakeC(...) abort
         return -1
     endif
 
-    let s:filename = '_' . expand("%:r")
+    let s:filename = expand("%:h") . '/' . expand("%:t:r") . '.x'
     if (filereadable(s:filename) || &ft=='rust')
         if has('nvim')
             if (&ft=='rust')
@@ -59,7 +59,7 @@ function! AfterAsync() abort
     endif
 endfunction
 
-command! MakeExe !i686-w64-mingw32-g++ "%" --static -o "%:r.exe"
+command! MakeExe !i686-w64-mingw32-g++ "%" --static -o "%:h/%:t:r.exe"
 
 command! ReferenceCppreference !$BROWSER file://$HOME/Documents/Documentation/cplusplus/cppreference/en/index.html >/dev/null &
 command! ReferenceCplusplus !$BROWSER file://$HOME/Documents/Documentation/cplusplus/Cpp/index.html >/dev/null &
