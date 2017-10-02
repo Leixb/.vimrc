@@ -42,16 +42,19 @@ let s:menus.ycm.command_candidates = [
 let s:menus.jutge = { 'description' : 'Jutge.org commands' }
 
 let s:menus.jutge.command_candidates = [
-            \ ['Add Cases                                   ', 'JutgeAddCases'],
-            \ ['Download                                    ', 'JutgeDownload'],
-            \ ['Fet                                         ', 'JutgeFet'],
-            \ ['Get Name                                    ', 'JutgeGet Name'],
-            \ ['Get Code                                    ', 'JutgeGet Code'],
-            \ ['Get Statement                               ', 'JutgeGet Statement'],
-            \ ['Get Samples                                 ', 'JutgeGet Samples'],
-            \ ['Grep                                        ', 'JutgeGrep'],
-            \ ['Search                                      ', 'JutgeSearch'],
-            \ ['Test                                        ', 'JutgeTest'],
+            \ ['Test                                        ', 'JTest'],
+            \ ['New                                         ', 'JNew'],
+            \ ['Archive                                     ', 'JArchive'],
+            \ ['Add Test                                    ', 'JAddTest'],
+            \ ['Cookie                                      ', 'JCookie'],
+            \ ['Vim Cookie                                  ', 'JVimCookie'],
+            \ ['Download                                    ', 'JDownload'],
+            \ ['Upload                                      ', 'JUpload'],
+            \ ['Grep                                        ', 'JGrep'],
+            \ ['Search                                      ', 'JSearch'],
+            \ ['Show Name                                   ', 'JShow name'],
+            \ ['Show Statement                              ', 'JShow stat'],
+            \ ['Show Samples                                ', 'JShow cases'],
             \ ]
 
 " Git menu (fugitive') {{{1

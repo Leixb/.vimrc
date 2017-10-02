@@ -214,10 +214,10 @@ Plug 'kovetskiy/sxhkd-vim' "{{{3
 
 " Misc {{{2
 
-Plug 'Leixb/vim-jutge-utils' "{{{3
+Plug 'Leixb/vim-jutge-utils', {'branch' : 'develop'} "{{{3
 " Small plugin to automate jutge.org test cases
 let g:jutge_command='jutge'
-let g:jutge_folder=$HOME . '/Documents/Universitat/PROG'
+let g:jutge_folder=$HOME . '/Documents/UPC/jutge'
 let g:jutge_done_folder=g:jutge_folder . '/Done'
 
 Plug 'skywind3000/asyncrun.vim' "{{{3
