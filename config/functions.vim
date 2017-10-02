@@ -60,8 +60,3 @@ function! AfterAsync() abort
 endfunction
 
 command! MakeExe !i686-w64-mingw32-g++ "%" --static -o "%:h/%:t:r.exe"
-
-command! ReferenceCppreference !$BROWSER file://$HOME/Documents/Documentation/cplusplus/cppreference/en/index.html >/dev/null &
-command! ReferenceCplusplus !$BROWSER file://$HOME/Documents/Documentation/cplusplus/Cpp/index.html >/dev/null &
-command! ReferenceDirbaio !$BROWSER file://$HOME/Documents/Documentation/Dirbaio >/dev/null &
-command! ReferenceCompProg !$BROWSER file://$HOME/Documents/Documentation/cplusplus/CompetitiveProgramming >/dev/null &
