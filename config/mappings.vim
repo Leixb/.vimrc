@@ -121,8 +121,7 @@ augroup filetype_maps_vim
 augroup END
 
 " Jutge mappings {{{2
-nnoremap <F10> :call JutgeTest()<CR>
-nnoremap <C-F10> :call JutgeFet()<CR>
+nnoremap <F10> :call JTest()<CR>
 
 " Compilation mappings {{{2
 nnoremap <C-F8> :call AfterMakeCwithIn()<CR>
