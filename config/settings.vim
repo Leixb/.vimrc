@@ -47,7 +47,7 @@ set wrapscan
 " Wildmenu {{{1
 set wildmenu
 set wildmode=full
-set wildignore=*.o
+set wildignore=*.o,*.x
 set wildignore+=*.png,*.jpg,*.gif
 set wildignore+=*.pdf,*.odt
 

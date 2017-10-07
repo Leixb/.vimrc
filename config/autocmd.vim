@@ -47,7 +47,7 @@ augroup filetype_vim
 augroup END
 
 " Equalize splits on resize 1{{{
-augroup FixVimResize
-    autocmd!
-    autocmd VimResized * wincmd =
-augroup END
+"augroup FixVimResize
+    "autocmd!
+    "autocmd VimResized * wincmd =
+"augroup END
