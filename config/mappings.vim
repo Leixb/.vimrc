@@ -111,48 +111,48 @@ nnoremap <c-l> <c-w>l
 
 if (!has('nvim'))
 
-" VIM mappings {{{1
+    " VIM mappings {{{1
 
-" Filetype maps {{{2
-augroup filetype_maps_vim
-    autocmd!
-    autocmd Filetype java map <C-F9> :make<CR><CR>:!java "%:r"<CR>
-    autocmd Filetype tex map <C-F9> :!zathura "%:r.pdf" & <CR><CR>
-augroup END
+    " Filetype maps {{{2
+    augroup filetype_maps_vim
+        autocmd!
+        autocmd Filetype java map <C-F9> :make<CR><CR>:!java "%:r"<CR>
+        autocmd Filetype tex map <C-F9> :!zathura "%:r.pdf" & <CR><CR>
+    augroup END
 
-" Jutge mappings {{{2
-nnoremap <F10> :call JTest()<CR>
+    " Jutge mappings {{{2
+    nnoremap <F10> :JTest<CR>
 
-" Compilation mappings {{{2
-nnoremap <C-F8> :call AfterMakeCwithIn()<CR>
-nnoremap <C-F9> :call AfterMakeC()<CR>
+    " Compilation mappings {{{2
+    nnoremap <C-F8> :call AfterMakeCwithIn()<CR>
+    nnoremap <C-F9> :call AfterMakeC()<CR>
 
 else
 
-" NVIM mappings {{{1
+    " NVIM mappings {{{1
 
-" Jutge.org keymaps {{{2
-nnoremap <F10> :call JutgeTest()<CR>
-nnoremap <F34> :call JutgeFet()<CR>
+    " Jutge.org keymaps {{{2
+    nnoremap <F10> :JTest<CR>
+    nnoremap <F34> :JTest<CR>
 
-" Compile commands {{{2
-nnoremap <F32> :call AfterMakeCwithIn()<CR>
-nnoremap <F33> :call AfterMakeC()<CR>
+    " Compile commands {{{2
+    nnoremap <F32> :call AfterMakeCwithIn()<CR>
+    nnoremap <F33> :call AfterMakeC()<CR>
 
-" Filetype Specify keymaps {{{2
+    " Filetype Specify keymaps {{{2
 
-augroup filetype_maps_nvim
-    autocmd!
-    autocmd Filetype python map <F33> :term "./%"<CR>
-    autocmd Filetype python3 map <F33> :term "./%"<CR>
-    autocmd Filetype sh map <F33> :term "./%"<CR>
-    autocmd Filetype java map <F33> :term java "%:r"<CR>
-    autocmd Filetype tex map <F33> :!zathura "%:r.pdf" & <CR><CR>
-    autocmd Filetype markdown map <F33> :!zathura "%:r.pdf" & <CR><CR>
-    autocmd Filetype haskell map <F33> :term runghc "%"<CR>
-augroup END
+    augroup filetype_maps_nvim
+        autocmd!
+        autocmd Filetype python map <F33> :term "./%"<CR>
+        autocmd Filetype python3 map <F33> :term "./%"<CR>
+        autocmd Filetype sh map <F33> :term "./%"<CR>
+        autocmd Filetype java map <F33> :term java "%:r"<CR>
+        autocmd Filetype tex map <F33> :!zathura "%:r.pdf" & <CR><CR>
+        autocmd Filetype markdown map <F33> :!zathura "%:r.pdf" & <CR><CR>
+        autocmd Filetype haskell map <F33> :term runghc "%"<CR>
+    augroup END
 
-" Terminal mappings {{{2
-tnoremap <Esc> <C-\><C-n>
+    " Terminal mappings {{{2
+    tnoremap <Esc> <C-\><C-n>
 
 endif

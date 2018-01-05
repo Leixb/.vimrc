@@ -1,14 +1,19 @@
-snippet function_gcd "Greatest common divisor" b
+snippet func_gcd "Greatest common divisor" b
 template <typename T>
-T gcd (T a, T b) { return (b==0)? a : gcd(b,a%b); }
+T gcd (T a, T b) { return b? gcd(b, a%b) : a; }
 endsnippet
 
-snippet function_abs "Absoulte value" b
+snippet func_lcm "Least common multiple" b
+template <typename T>
+inline T lcm(const T& a, const T& b) { return a*b/gcd(a, b); }
+endsnippet
+
+snippet func_abs "Absoulte value" b
 template <typename T>
 T abs (T n) { return (n < 0)? -n : n; }
 endsnippet
 
-snippet function_ostream_vector "ostream << vector" b
+snippet func_ostream_vector "ostream << vector" b
 template <typename T>
 ostream& operator<<(ostream& os, const vector<T>& v) {
 	os << '[';
@@ -18,7 +23,19 @@ ostream& operator<<(ostream& os, const vector<T>& v) {
 }
 endsnippet
 
-snippet function_istream_vector "istream vector" b
+snippet func_prime "Is prime" b
+template<typename T>
+bool is_prime(const T& n) {
+    if (n <= 1) return false;
+    if (n <= 3) return true;
+    if (n%2 == 0 or n%3 == 0) return false;
+    for (T i = 6; i*i - 2*i < n; i += 6)
+	if (n%(i-1) == 0 or n%(i+1) == 0) return false;
+    return true;
+}
+endsnippet
+
+snippet func_istream_vector "istream vector" b
 template <typename T>
 istream& operator>>(istream& is, vector<T>& v) {
 	for (auto& i : v) is >> i;
@@ -26,15 +43,15 @@ istream& operator>>(istream& is, vector<T>& v) {
 }
 endsnippet
 
-snippet function_istream_pair "istream pair" b
+snippet func_istream_pair "istream pair" b
 template <typename T1, typename T2>
-istream& operator>> (istream& is, pair<T1,T2>& p) {
+istream& operator>> (istream& is, pair<T1, T2>& p) {
 	is >> p.first >> p.second;
 	return is;
 }
 endsnippet
 
-snippet function_ostream_pair "ostream pair"
+snippet func_ostream_pair "ostream pair"
 template <typename T1, typename T2>
 ostream& operator<< (ostream& os, const pair<T1,T2>& p) {
 	os << '{' << p.first << ',' << p.second << '}';
@@ -65,7 +82,7 @@ queue <${1:int}> $0
 endsnippet
 
 snippet sortLambda "Sort with lambda" b
-sort(v.begin(),v.end(),[](${1:int} a,$1 b){ return ${2:a>b}; });$0
+sort(v.begin(), v.end(), [](${1:int} a, $1 b){ return ${2:a>b}; });$0
 endsnippet
 
 snippet debug "Debugging functions" b
@@ -127,5 +144,36 @@ snippet whilecinInt "while ---" b
 ${1:int} ${2:a};
 while (cin >> ${2/,/ >> /g}) {
 	${VISUAL}$0
+}
+endsnippet
+
+snippet algo_kmp "KMP" b
+template <typename T>
+bool kmp(const vector<T>& text, const vector<T>& pattern) { // KMP
+    if (text.size() < pattern.size()) return false;
+    // Build fail table of pattern
+    vector <int> F (pattern.size(), 0);
+    for(size_t i = 2; i < pattern.size(); ++i)
+        for(int j = F[i-1];; j = F[j])
+            if(pattern[j] == pattern[i - 1]) {
+                F[i] = j + 1;
+                break;
+            } else if (j == 0) break; // F[i] = 0
+    // Search pattern in text
+    for(size_t i = 0, j = 0; j < text.size();) // i = index of pattern
+        if(text[j] == pattern[i] and (++i, ++j)) {
+            if(i == pattern.size()) return true;
+        } else if(i > 0) i = F[i]; // go back using fail table
+        else ++j;
+    return false;
+}
+endsnippet
+
+snippet algo_exp "Fast exponentiation" b
+template <typename T>
+T pow(T a, T b) {
+    T r = 1;
+    for (;b; b>>=1, a*=a) if (b&1) r *= a;
+    return r;
 }
 endsnippet

@@ -20,7 +20,7 @@ function! BuildYCM(info) abort
   endif
 endfunction
 
-Plug 'Valloric/YouCompleteMe',{ 'do': function('BuildYCM') }
+Plug 'Valloric/YouCompleteMe', { 'do' : function('BuildYCM')}
 " Code-completion engine for Vim
 let g:ycm_global_ycm_extra_conf = '~/.vim/config/ycm/ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_insertion=1
@@ -32,7 +32,7 @@ set omnifunc=syntaxcomplete#Complete
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_error_symbol = ''
 let g:ycm_warning_symbol = ''
-let g:ycm_semantic_triggers = {'tex':['\']}
+let g:ycm_semantic_triggers = {'tex' : ['\']}
 
 Plug 'Valloric/ListToggle' "{{{3
 " A vim plugin for toggling the display of the quickfix list and the location-list.
@@ -85,9 +85,6 @@ Plug 'tpope/tpope-vim-abolish' "{{{3
 
 " Interface {{{2
 
-Plug 'thaerkh/vim-indentguides' "{{{3
-"  Simple indentation guides for your buffers
-
 Plug 'vim-airline/vim-airline' "{{{3
 " Lean & mean status/tabline for vim that's light as air.
 let g:airline#extensions#tabline#enabled=1
@@ -102,7 +99,7 @@ Plug 'vim-airline/vim-airline-themes' "{{{3
 Plug 'airblade/vim-gitgutter' "{{{3
 " git diff in the gutter (sign column) and stages/undoes hunks.
 
-Plug 'ryanoasis/vim-devicons' "{{{3
+Plug 'ryanoasis/vim-devicons', ($TERM == 'xterm-termite')? {} : {'on' : []} "{{{3
 " Adds file type glyphs/icons to many popular Vim plugins
 
 Plug 'mhinz/vim-startify' "{{{3
@@ -138,6 +135,9 @@ Plug 'Shougo/denite.nvim', has('nvim') ? { 'do': ':UpdateRemotePlugins' } : {} "
 " Dark powered asynchronous unite all interfaces for Neovim/Vim8
 " Menus in file .vim/config/denite
 
+Plug 'Shougo/neomru.vim' "{{{3
+" MRU plugin includes unite.vim/denite.nvim MRU sources
+
 Plug 'majutsushi/tagbar' "{{{3
 " Vim plugin that displays tags in a window, ordered by scope
 
@@ -160,11 +160,11 @@ Plug 'tpope/vim-rhubarb' "{{{3
 Plug 'tpope/vim-vinegar' "{{{3
 " combine with netrw to create a delicious salad dressing
 
-Plug 'vim-utils/vim-man',has('nvim') ? {'on':[]} : {} "{{{3
+Plug 'vim-utils/vim-man', has('nvim')? {'on' : []} : {} "{{{3
 " View man pages in vim. Grep for the man pages.
 
 " Syntax {{{2
-Plug 'LaTeX-Box-Team/LaTeX-Box' "{{{3
+Plug 'LaTeX-Box-Team/LaTeX-Box', {'for' : ['tex', 'latex', 'markdown']} "{{{3
 " Lightweight Toolbox for LaTeX
 
 "Remove backslash for correct completion using YCM (avoid \\)
@@ -191,7 +191,7 @@ let g:LatexBox_quickfix = 3
 let g:LatexBox_autojump = 1
 let g:LatexBox_latexmk_options = "-pdflatex='pdflatex -synctex=1 \%O \%S'"
 
-Plug 'plasticboy/vim-markdown' "{{{3
+Plug 'plasticboy/vim-markdown', {'for' : 'markdown'} "{{{3
 " Syntax highlighting, matching rules and mappings for Markdown and extensions
 let g:vim_markdown_toc_autofit = 1
 let g:vim_markdown_math = 1
@@ -203,18 +203,21 @@ Plug 'vim-pandoc/vim-pandoc' "{{{3
 Plug 'vim-pandoc/vim-pandoc-syntax' "{{{3
 " pandoc markdown syntax, to be installed alongside vim-pandoc
 
-Plug 'octol/vim-cpp-enhanced-highlight' "{{{3
+Plug 'octol/vim-cpp-enhanced-highlight', {'for' : 'cpp'} "{{{3
 " Additional Vim syntax highlighting for C++ (including C++11/14)
 
-Plug 'rust-lang/rust.vim' "{{{3
+Plug 'rust-lang/rust.vim', {'for' : 'rust'} "{{{3
 " Vim configuration for Rust.
 
-Plug 'kovetskiy/sxhkd-vim' "{{{3
+Plug 'kovetskiy/sxhkd-vim', {'for' : 'sxhkd'} "{{{3
 " Vim plugin for sxhkd (Simple X hotkey daemon)
+
+Plug 'fatih/vim-go', {'for' : 'go'} "{{{3
+" Go development plugin for vim
 
 " Misc {{{2
 
-Plug 'Leixb/vim-jutge-utils', {'branch' : 'develop'} "{{{3
+Plug 'Leixb/vim-jutge-utils' "{{{3
 " Small plugin to automate jutge.org test cases
 let g:jutge_command='jutge'
 let g:jutge_folder=$HOME . '/Documents/UPC/jutge'

@@ -36,6 +36,9 @@ set cindent
 set breakindent
 set showbreak=\\\\\
 
+set list
+set listchars=tab:>-,trail:·
+
 " Search {{{1
 set hlsearch
 set incsearch
@@ -46,6 +49,7 @@ set wrapscan
 
 " Wildmenu {{{1
 set wildmenu
+set wildignorecase
 set wildmode=full
 set wildignore=*.o,*.x
 set wildignore+=*.png,*.jpg,*.gif
@@ -59,7 +63,8 @@ set hidden
 set autoread " Automatically update changes from other programs
 
 " Wraping {{{1
-set colorcolumn=80
+set textwidth=79
+set colorcolumn=+1,100,120,200
 set wrap
 set linebreak
 set synmaxcol=200
@@ -141,7 +146,7 @@ endif
 
 " Style {{{1
 
-let g:default_colorscheme ='base16-default-dark'
+let g:default_colorscheme = 'base16-default-dark'
 
 if $TERM=='xterm-termite'
     set t_Co=256
